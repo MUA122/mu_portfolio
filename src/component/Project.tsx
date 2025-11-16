@@ -39,6 +39,7 @@ export function ProSection() {
             flexDirection: "column",
             gap: 2,
             transition: "all 0.3s ease",
+            cursor: "pointer",
             "&:hover": {
               transform: "translateY(-6px)",
               borderColor: "#F56431",
