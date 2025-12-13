@@ -1,25 +1,34 @@
 import { Box, Typography, Button } from "@mui/material";
-import myPic from "../assets/myPic.png";
+import myPic from "../assets/myPic2.png";
 
 export function HomeSection() {
   return (
     <Box
       id="home"
       sx={{
-        minHeight: "100vh",
+        minHeight: "80vh",
         display: "flex",
+
+        flexDirection: { xs: "column", md: "row" },
+
         alignItems: "center",
-        justifyContent: "space-between",
-        padding: "40px 80px",
+        justifyContent: { xs: "center", md: "space-between" },
+
+        padding: { xs: "24px 16px", sm: "32px 24px", md: "40px 80px" },
+
         boxSizing: "border-box",
         bgcolor: "#020613",
         color: "white",
+
+        gap: { xs: 4, md: 0 },
       }}
     >
+      {/* Left Card */}
       <Box
         sx={{
           flex: "1 1 300px",
           maxWidth: 400,
+          width: { xs: "90%", md: "auto" },
           bgcolor: "#020617",
           borderRadius: 4,
           padding: 3,
@@ -40,11 +49,24 @@ export function HomeSection() {
           Hi, I'm
         </Typography>
 
-        <Typography variant="h3" sx={{ fontWeight: "bold" }}>
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: "bold",
+            fontSize: { xs: "2rem", sm: "2.6rem", md: "3rem" },
+          }}
+        >
           Mahmoud Usama
         </Typography>
 
-        <Typography variant="h5" sx={{ color: "#6366f1", fontWeight: 600 }}>
+        <Typography
+          variant="h5"
+          sx={{
+            color: "#6366f1",
+            fontWeight: 600,
+            fontSize: { xs: "1.1rem", sm: "1.25rem", md: "1.5rem" },
+          }}
+        >
           Frontend Developer & Computer Science Student
         </Typography>
 
@@ -54,10 +76,20 @@ export function HomeSection() {
           UI/UX, and always improving my skills.
         </Typography>
 
-        <Box sx={{ display: "flex", gap: 2, marginTop: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            marginTop: 2,
+
+            flexDirection: { xs: "column", sm: "row" },
+
+            "& a, & button": { width: { xs: "100%", sm: "auto" } },
+          }}
+        >
           <Button
             variant="contained"
-            href="https://drive.google.com/file/d/1qkHOQYBpiwUv0yvQWp0LQxPrjoNtNgJM/view?usp=sharing"
+            href="https://drive.google.com/file/d/1elWIOHvZdpeInNE1dcOe3DB05CuJSKqE/view?usp=drive_link"
             target="_blank"
             sx={{
               textTransform: "none",
@@ -81,22 +113,36 @@ export function HomeSection() {
           </Button>
         </Box>
       </Box>
-      <Box>
-        <img
+
+      {/* Center Image */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flex: "0 0 auto",
+
+          mx: { xs: 0, md: 4 },
+        }}
+      >
+        <Box
+          component="img"
           src={myPic}
-          style={{
-            width: "400px",
-            height: "400px",
+          alt="Mahmoud Usama"
+          sx={{
+            width: { xs: 220, sm: 280, md: 400 },
+            height: { xs: 220, sm: 280, md: 400 },
             borderRadius: "50%",
-            objectFit: "fill",
+            objectFit: "cover",
           }}
         />
       </Box>
 
+      {/* Right Card */}
       <Box
         sx={{
           flex: "1 1 300px",
           maxWidth: 400,
+          width: { xs: "90%", md: "auto" },
           bgcolor: "#020617",
           borderRadius: 4,
           padding: 3,
